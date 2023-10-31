@@ -2,9 +2,9 @@ package ejercicios;
 
 import java.util.ArrayList;
 
-import ejercicios.Pg12ejercicio1.Libro;
+import ejercicios.Pg12ejercicio2.Libro;
 
-public class Pg12ejercicio2 {
+public class Pg12ejercicio3 {
 
 	public static void main(String[] args) {
 		
@@ -20,33 +20,39 @@ public class Pg12ejercicio2 {
         libros.add(libro3);
         libros.add(libro4);
         libros.add(libro5);
+                
+        libros = ordenar2(libros);
         
-        libros = ordenar(libros);
+        imprime(libros);
         
-        for(Libro libro : libros) {System.out.println(libro);}
 	}
 	
-	public static ArrayList<Libro> ordenar(ArrayList<Libro> L) {
-		
+	public static ArrayList<Libro> ordenar2(ArrayList<Libro> L) {
 		if (L == null) return null;
 		ArrayList<Libro> librosNew = new ArrayList<Libro>();
-		int tamayo = L.size(); //se ajusta al tamaño del arraylist 
+		int tamayo = L.size();
 		
-		for(int k=0; k<tamayo; k++) {
-			Libro libroMenor = L.get(0); //como menor asignamos el primer elemento de la lista
-		for(Libro libroA : L) if(libroA.isMenor(libroMenor)) libroMenor=libroA; // for each para seleccionar el meor de todos los elementos del array
-			librosNew.add(libroMenor); //añadimos al nuevo arraylist el menor en esta iteracion
-			L.remove(libroMenor); //borramos del arrylist principal el menor en esta iteracion
+		for (int i=0; i<tamayo; i++) {	
+		Libro menor = L.get(0);
+		for (Libro M : L)  if (M.compareTo(menor)<0)  menor=M; 
+		librosNew.add(menor);
+		L.remove(menor);
+			}
+		return librosNew;
 		}
-		return librosNew;//devuelve el arraylist nuevo ya ordenado
+	
+	public static void imprime(ArrayList<Libro> libros) {
+		 for (Libro p : libros) {System.out.println(p);}
 	}
-	
-	
+
 	public static class Libro {
 		private String titulo;
 		private String autor;
 		private int anyo;
-
+	
+	public int compareTo(Libro L) {
+		return this.titulo.compareTo(L.titulo);
+	}
 		
 	public Libro() {
 	}
@@ -90,9 +96,4 @@ public class Pg12ejercicio2 {
 	}
 	
 	
-	
-	
-	
-	
-	}
-
+}
