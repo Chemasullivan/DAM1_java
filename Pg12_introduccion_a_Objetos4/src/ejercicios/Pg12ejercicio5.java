@@ -16,22 +16,22 @@ public class Pg12ejercicio5 {
         libros.add(libro1);
         libros.add(libro2);
         
-        Collections.sort(libros, new comparadorAutor());
+        Collections.sort(libros, new comparadorAutor()); //asi se hace la ordenacion, libros y una instancia que usa el metodo de comparacion.
         imprimir(libros);
         Collections.sort(libros, new comparadorTitulo());
         imprimir(libros);
 	}
-	
+	//nueva clase comparator para crear un metodo que compare por autor.
 	public static class comparadorAutor implements Comparator<Libro> {
 		
-		public int compare(Libro L1, Libro L2) {
+		public int compare(Libro L1, Libro L2) { //se crea el metodo con el criterio de comparacion
 		if (L1.getAutor().compareTo(L2.getAutor())==0)
 			return L1.getTitulo().compareTo(L2.getTitulo());
 		else 
 			return L1.getTitulo().compareTo(L2.getTitulo());
 	}
 }	
-	
+	//nueva clase comparator para crear un metodo que compare por titulo.
 	public static class comparadorTitulo implements Comparator<Libro> {
 		
 		public int compare(Libro L1, Libro L2) {

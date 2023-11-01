@@ -33,7 +33,7 @@ public class Pg12ejercicio4 {
     	
 
 	}
-
+	//aqui tenemos que incorporar la imprlentacion Comparable<> y el metodo compareTo(). Repasar bien esto
 	public static class Libro implements Comparable<Libro>{
 		private String titulo;
 		private String autor;
