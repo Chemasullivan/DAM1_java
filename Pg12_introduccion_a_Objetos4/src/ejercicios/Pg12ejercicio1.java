@@ -31,10 +31,10 @@ public class Pg12ejercicio1 {
 	
 	}
 	
-	public String getNombre() {
+	public String getTitulo() {
 		return nombre;
 	}
-	public void setNombre(String nombre) {
+	public void setTitulo(String nombre) {
 		this.nombre = nombre;
 	}
 	public String getAutor() {
@@ -53,7 +53,8 @@ public class Pg12ejercicio1 {
 		this.nombre=nombre;
 		this.autor=autor;
 		this.anyo=editorial;
-		}                   
+		}      
+	// se usa el mertodo equals dentro de la clase, aquí se queda para siempre
 	public boolean iguales(Libro OtroLibro) {
 		return (this.nombre.equals(OtroLibro.nombre) && (this.autor.equals(OtroLibro.autor)) && (this.anyo.equals(OtroLibro.anyo)));
 			

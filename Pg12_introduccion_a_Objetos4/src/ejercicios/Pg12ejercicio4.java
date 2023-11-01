@@ -1,10 +1,12 @@
 package ejercicios;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import ejercicios.Pg12ejercicio2.Libro;
+import ejercicios.Pg12ejercicio3.Libro;
 
-public class Pg12ejercicio3 {
+public class Pg12ejercicio4 {
 
 	public static void main(String[] args) {
 		
@@ -20,38 +22,27 @@ public class Pg12ejercicio3 {
         libros.add(libro3);
         libros.add(libro4);
         libros.add(libro5);
-                
-        libros = ordenar2(libros);
         
-        imprime(libros);
-        
-	}
-	
-	public static ArrayList<Libro> ordenar2(ArrayList<Libro> L) {
-		if (L == null) return null;
-		ArrayList<Libro> librosNew = new ArrayList<Libro>();
-		int tamayo = L.size();
-		
-		for (int i=0; i<tamayo; i++) {	
-		Libro menor = L.get(0);
-		for (Libro M : L)  if (M.compareTo(menor)<0)  menor=M; 
-		librosNew.add(menor);
-		L.remove(menor);
-			}
-		return librosNew;
-		}
-	
-	public static void imprime(ArrayList<Libro> libros) {
-		 for (Libro p : libros) {System.out.println(p);}
+        Collections.sort(libros);
+        imprimir(libros);
+    	
+    }
+	private static void imprimir(ArrayList<Libro> libro) {
+    	for(Libro L : libro) {System.out.println(L);}
+    	
+    	
+
 	}
 
-	public static class Libro {
+	public static class Libro implements Comparable<Libro>{
 		private String titulo;
 		private String autor;
 		private int anyo;
 	
+	
 	public int compareTo(Libro L) {
-		return this.titulo.compareTo(L.titulo);
+		return this.titulo.compareTo(L.titulo);	
+		
 	}
 		
 	public Libro() {
@@ -94,6 +85,5 @@ public class Pg12ejercicio3 {
 	}
 	
 	}
-	
 	
 }

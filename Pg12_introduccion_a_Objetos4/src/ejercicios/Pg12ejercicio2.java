@@ -51,10 +51,10 @@ public class Pg12ejercicio2 {
 	public Libro() {
 	}
 	
-	public String getNombre() {
+	public String getTitulo() {
 		return titulo;
 	}
-	public void setNombre(String nombre) {
+	public void setTitulo(String nombre) {
 		this.titulo = nombre;
 	}
 	public String getAutor() {
@@ -79,7 +79,7 @@ public class Pg12ejercicio2 {
 	}
 	
 	public boolean isMenor(Libro libro) {
-		return (this.titulo.compareTo(libro.titulo)<=0) ? true : false;
+		return (this.titulo.compareTo(libro.titulo)<=0) ? true : false; //Se ordena por el titulo
 	}
 
 	@Override
