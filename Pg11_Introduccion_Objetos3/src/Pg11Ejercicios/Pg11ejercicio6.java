@@ -20,7 +20,7 @@ public class Pg11ejercicio6 {
 		fechas[Persona.FTrabajo]=new Fecha(1,9,2001);
 		Persona persona1 = new Persona(nombre, fechas);
 		listaPersonas.add(persona1);
-		System.out.println(listaPersonas.get(0));
+		System.out.println(listaPersonas.get(0));//imprime la posicion 0 del array
 		
 		nombre="Andres";
 		fechas[Persona.FNacimiento] = new Fecha(5,7,1982);

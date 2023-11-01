@@ -2,6 +2,8 @@ package Pg11Ejercicios;
 
 import java.util.GregorianCalendar;
 
+import Pg11Ejercicios.Pg11ejercicio5.Persona;
+
 public class Pg11ejercicio5 {
 
 	public static void main(String[] args) {
@@ -46,6 +48,11 @@ public class Pg11ejercicio5 {
 		public Fecha[] getFechas() {return fechas;}
 		public void setFechas(Fecha[] fechas) {	this.fechas = fechas;}
 	    
+		 //metodo para comprobar si es menor por nombre
+	    public boolean isMenor(Persona p) { 
+	    	return	(this.nombre.compareTo(p.nombre)<0) ? true : false; 
+	    } 
+		
 		public String toString() {
 			return "nombre: " + nombre + "\nfecha nacimiento: " + fechas[0] + "\nfecha boda: " + fechas[1] +"\nfecha trabajo: " + fechas[2];
 		}
