@@ -23,7 +23,7 @@ public class Pg12ejercicio6 {
 		//imprime por nombre.
 		Collections.sort(clientes);
 		imprime(clientes);
-		
+		//ok
 	}
 	
 	
