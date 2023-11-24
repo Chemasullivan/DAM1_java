@@ -7,7 +7,7 @@ Cliente(Id, Nombre, Direccion,Provincia)
 Almacen (Id, IdCliente, Direccion, Provincia)
 En un programa principal desarrolle el método 
 private static ArrayList<Cliente> clientesConAlmacenEn(ArrayList<Cliente> clientes, String provincia);
-y pruébelo.
+y pruébelo
 */
 import java.util.ArrayList;
 
